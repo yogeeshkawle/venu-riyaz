@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+<title>Venu Riyaz — Flute Sargam Practice</title>
+<meta name="description" content="Indian Classical Bansuri/Flute notation and riyaz practice app, by Yogeesh Kawle." />
+
+<!-- PWA manifest (Android / Chrome / macOS Safari 17+ Add to Dock) -->
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0e1618" />
+
+<!-- iOS / iPadOS: Add to Home Screen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Venu Riyaz" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="icons/icon-57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="icons/icon-60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="icons/icon-72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="icons/icon-76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="icons/icon-114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="icons/icon-120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="icons/icon-144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png" />
+<link rel="apple-touch-icon" sizes="167x167" href="icons/icon-167.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png" />
+
+<!-- favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16.png" />
+
+<style>
+  html, body { margin: 0; padding: 0; background: #0e1618; }
+  #root { min-height: 100vh; }
+  /* respect the iPhone notch / home indicator when running standalone */
+  @supports (padding: max(0px)) {
+    body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>
